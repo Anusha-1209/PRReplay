@@ -10,13 +10,11 @@ variable "deploy_location" {
 }
 
 variable "workspace" {
-  type        = string
   description = "Name of the Azure Virtual Desktop workspace"
   default     = "AVD TF Workspace"
 }
 
 variable "hostpool" {
-  type        = string
   description = "Name of the Azure Virtual Desktop host pool"
   default     = "AVD-TF-HP"
 }
@@ -27,16 +25,13 @@ variable "ad_vnet" {
 }
 
 variable "dns_servers" {
-  type        = list(string)
   description = "Custom DNS configuration"
 }
 
 variable "vnet_range" {
-  type        = list(string)
   description = "Address range for deployment VNet"
 }
 variable "subnet_range" {
-  type        = list(string)
   description = "Address range for session host subnet"
 }
 
@@ -51,7 +46,6 @@ variable "avd_users" {
 }
 
 variable "aad_group_name" {
-  type        = string
   description = "Azure Active Directory Group for AVD users"
 }
 
@@ -61,7 +55,6 @@ variable "rdsh_count" {
 }
 
 variable "prefix" {
-  type        = string
   description = "Prefix of the name of the AVD machine(s)"
 }
 
@@ -78,7 +71,6 @@ variable "domain_user_upn" {
 variable "domain_password" {
   type        = string
   description = "Password of the user to authenticate with the domain"
-  sensitive   = true
 }
 
 variable "vm_size" {
@@ -97,5 +89,34 @@ variable "local_admin_username" {
 
 variable "local_admin_password" {
   description = "local admin password"
-  sensitive   = true
+}
+
+# optional section - only use if deploying ANF
+
+variable "netapp_acct_name" {
+  default = "AVD_NetApp"
+}
+
+variable "netapp_pool_name" {
+  default = "AVD_NetApp_pool"
+}
+
+variable "netapp_volume_name" {
+  default = "AVD_NetApp_volume"
+}
+
+variable "netapp_smb_name" {
+  default = "AVDNetApp"
+}
+
+variable "netapp_volume_path" {
+  default = "AVDNetAppVolume"
+}
+
+variable "netapp_subnet_name" {
+  default = "NetAppSubnet"
+}
+
+variable "netapp_address" {
+  description = "Address range for NetApp Subnet"
 }
