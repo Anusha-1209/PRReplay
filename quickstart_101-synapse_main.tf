@@ -19,6 +19,4 @@ data "http" "ip" {
 resource "azurerm_resource_group" "default" {
   name     = "rg-${local.basename}"
   location = var.location
-
-  tags = local.tags
 }
