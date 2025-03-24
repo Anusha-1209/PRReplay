@@ -1,5 +1,4 @@
-# alfred-test
-## PR Mappings
+## Azure PR Mappings To Alfred PR Replay
 | Original PR                                 | Replayed PR                                      |
 |:--------------------------------------------|:-------------------------------------------------|
 | https://github.com/Azure/terraform/pull/32  | https://github.com/Anusha-1209/PRReplay/pull/1   |
